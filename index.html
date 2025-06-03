@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ELLEextra</title>
   <style>
     * {
@@ -18,6 +18,7 @@
       background: white;
       color: #000;
       padding: 40px;
+      position: relative;
     }
 
     header {
@@ -55,32 +56,119 @@
 
     .image-pair {
       display: flex;
-      gap: 20px;
-      justify-content: flex-start;
+      justify-content: space-between;
+      align-items: flex-start;
       margin-bottom: 20px;
+      gap: 20px;
+      position: relative;
     }
 
-    .image-pair img {
+    .left-images {
+      display: flex;
+      gap: 20px;
+      align-items: flex-end;
+      position: relative;
+      padding-bottom: 10px;
+      margin-right: 5px;
+    }
+
+    #left-img {
       width: 300px;
       height: auto;
       object-fit: cover;
-    }
-
-    .section {
-      margin-bottom: 40px;
-    }
-
-    .section .text {
-      max-width: 800px;
       margin-top: 20px;
     }
 
-    .section .title {
+    /* cruise-img를 포함하는 div에 position: relative 추가 */
+    .cruise-container {
+      position: relative;
+      width: 200px;
+      height: auto;
+    }
+
+    #cruise-img {
+      width: 200px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* cruise-caption 기존 텍스트 */
+    .cruise-caption {
+      position: absolute;
+      left: 220px;
+      bottom: 0;
+      width: 350px;
+      font-size: 14px;
+      line-height: 1.4;
+      margin-left: 440px;
+    }
+
+    /* 새로 추가하는 텍스트 박스 */
+    .cruise-text {
+      position: absolute;
+      bottom: 0;
+      left: 210px; /* 이미지 오른쪽에 딱 붙도록 살짝 조정 */
+      width: 350px;
+      background: rgba(255, 255, 255, 0.85); /* 살짝 배경 넣어 읽기 쉽게 */
+      padding: 10px;
+      box-sizing: border-box;
+      font-family: 'Georgia', serif;
+      color: #000;
+      font-size: 14px;
+      line-height: 1.4;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      pointer-events: none; /* 혹시 클릭 방지 */
+    }
+
+    .cruise-text .title {
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 16px;
+    }
+.cruise-caption {
+  position: absolute;
+  left: 220px;
+  bottom: -130px; /* 기존 0에서 -10px로 변경: 텍스트를 10px 더 아래로 */
+  width: 350px;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-left: 440px;
+}
+    .right-image {
+      width: 600px;
+      height: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .bottom-left-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    #bottom-left-img {
+      width: 250px;
+  height: auto;
+  position: relative;
+  top: 40px;  /* 원하는 만큼 값 조절 */
+}
+
+    .bottom-text {
+      margin-left: 20px;
+      max-width: 600px;
+    }
+
+    .bottom-text .title {
       font-weight: bold;
       margin-bottom: 10px;
     }
 
-    .section .body {
+    .bottom-text .body {
       font-size: 16px;
       line-height: 1.6;
     }
@@ -108,15 +196,34 @@
 
   <div class="divider"></div>
 
-  <!-- 두 이미지 나란히 배치 -->
+  <!-- 이미지 영역 -->
   <div class="image-pair">
-    <img src="https://i.imgur.com/h9Pbg7v.jpeg" alt="Woman in activewear" />
-    <img src="https://i.imgur.com/dU4W2kC.jpeg" alt="Woman on cruise" />
+    <div class="left-images">
+      <img id="left-img" src="https://i.imgur.com/h9Pbg7v.jpeg" alt="Woman in activewear" />
+      <div class="cruise-container">
+        <img id="cruise-img" src="https://i.imgur.com/dU4W2kC.jpeg" alt="Woman on cruise" />
+        <!-- 기존 텍스트 -->
+        <div class="cruise-caption">
+          I tall unfurled over the course of about a month. In August 2010, Lady Gaga became the most-followed person on the platform we then called Twitter. Not long after, she was beamed into the homes of 11.4 million MTV viewers during the VMAs, wearing 35 pounds of raw flank steak. Over the next couple of days, the app made a critical update: For the first time, photos and videos could be embedded in tweets, and new posts began to populate the feed via an addictive, slot machine-style feature, now known as the "infinite scroll." It buoyed conversation about the meat dress, already one
+        </div>
+
+        <!-- 새로 추가하는 텍스트 -->
+        <div class="cruise-text">
+          <div class="title">INDULGE IN THE ULTIMATE WELLNESS ESCAPE AT SEA</div>
+          <div class="body">
+            Hello, gorgeous! Embark on a rejuvenating Cunard" voyage with the exclusive Harper's BAZAAR Wellness at Sea program, featuring three luxurious packages to revitalize skin, body, and mind with tailored spa treatments, nourishing cuisine, inspiring master classes, and premium ELEMIS products. Company&reg;.<br /><br />
+            <strong>Visit CUNARD.COM/HB</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img class="right-image" src="https://i.imgur.com/Kahndjg.jpeg" alt="Right side image" />
   </div>
 
-  <!-- 텍스트 영역 -->
-  <div class="section">
-    <div class="text">
+  <!-- 하단 이미지 + 텍스트 -->
+  <div class="bottom-left-container">
+    <img id="bottom-left-img" src="https://i.imgur.com/GOLS5Em.png" alt="Bottom left image" />
+    <div class="bottom-text">
       <div class="title">MOVE IN SKECHERS COMFORT</div>
       <div class="body">
         Hello, gorgeous! Your all-in-one look has arrived: Skechers Hands Free Slip-ins&reg;
