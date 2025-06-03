@@ -53,23 +53,26 @@
       margin: 20px 0;
     }
 
-    .section {
+    .image-pair {
       display: flex;
+      gap: 20px;
       justify-content: flex-start;
-      margin-bottom: 40px;
-      align-items: flex-end;
+      margin-bottom: 20px;
     }
 
-    .section img {
+    .image-pair img {
       width: 300px;
       height: auto;
       object-fit: cover;
     }
 
+    .section {
+      margin-bottom: 40px;
+    }
+
     .section .text {
-      flex: 1;
-      margin-left: 5px;
       max-width: 800px;
+      margin-top: 20px;
     }
 
     .section .title {
@@ -80,18 +83,6 @@
     .section .body {
       font-size: 16px;
       line-height: 1.6;
-    }
-
-    .reverse {
-      flex-direction: row-reverse;
-      justify-content: flex-start;
-      align-items: flex-end;
-    }
-
-    .reverse .text {
-      margin-right: 5px;
-      margin-left: 0;
-      text-align: right; /* 왼쪽 이미지 옆 텍스트 오른쪽 정렬 */
     }
 
     footer {
@@ -117,8 +108,14 @@
 
   <div class="divider"></div>
 
-  <div class="section">
+  <!-- 두 이미지 나란히 배치 -->
+  <div class="image-pair">
     <img src="https://i.imgur.com/h9Pbg7v.jpeg" alt="Woman in activewear" />
+    <img src="https://i.imgur.com/dU4W2kC.jpeg" alt="Woman on cruise" />
+  </div>
+
+  <!-- 텍스트 영역 -->
+  <div class="section">
     <div class="text">
       <div class="title">MOVE IN SKECHERS COMFORT</div>
       <div class="body">
@@ -128,23 +125,6 @@
         coordinates look and feel amazing. Perfect for high-energy workouts and low-key weekends.
         The ultimate sport fashion flex, from The Comfort Technology Company&reg;.<br><br>
         <strong>SKECHERS.COM</strong>
-      </div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section reverse">
-    <img src="https://i.imgur.com/dU4W2kC.jpeg" alt="Woman on cruise" />
-    <div class="text">
-      <div class="title">INDULGE IN THE ULTIMATE WELLNESS ESCAPE AT SEA</div>
-      <div class="body">
-        Embark on a rejuvenating Cunard&trade; voyage with the exclusive Harper’s BAZAAR
-        Wellness at Sea program, featuring three luxurious packages to revitalize skin,
-        body, and mind with tailored spa treatments, nourishing cuisine, inspiring
-        master classes, and premium ELEMIS products.<br><br>
-        Visit <strong>CUNARD.COM/HB</strong><br>
-        or call (800) 728-6273 for more information
       </div>
     </div>
   </div>
