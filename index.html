@@ -93,11 +93,25 @@
       display: block;
     }
 
+    /* 이미지 바로 위 바깥에 Front Row 텍스트 */
+    .front-row-text {
+      position: absolute;
+      bottom: 100%;      /* 이미지 바로 위 */
+      left: 0;
+      margin-bottom: 10px; /* 이미지 위에서 10px 띄우기 */
+      font-family: 'Georgia', serif;
+      font-size: 24px;
+      font-weight: bold;
+      color: black;
+      pointer-events: none;
+      user-select: none;
+    }
+
     /* cruise-caption 기존 텍스트 */
     .cruise-caption {
       position: absolute;
       left: 220px;
-      bottom: 0;
+      bottom: -130px;
       width: 350px;
       font-size: 14px;
       line-height: 1.4;
@@ -108,9 +122,9 @@
     .cruise-text {
       position: absolute;
       bottom: 0;
-      left: 210px; /* 이미지 오른쪽에 딱 붙도록 살짝 조정 */
+      left: 210px;
       width: 350px;
-      background: rgba(255, 255, 255, 0.85); /* 살짝 배경 넣어 읽기 쉽게 */
+      background: rgba(255, 255, 255, 0.85);
       padding: 10px;
       box-sizing: border-box;
       font-family: 'Georgia', serif;
@@ -119,7 +133,7 @@
       line-height: 1.4;
       border: 1px solid #ccc;
       border-radius: 4px;
-      pointer-events: none; /* 혹시 클릭 방지 */
+      pointer-events: none;
     }
 
     .cruise-text .title {
@@ -127,15 +141,7 @@
       margin-bottom: 6px;
       font-size: 16px;
     }
-.cruise-caption {
-  position: absolute;
-  left: 220px;
-  bottom: -130px; /* 기존 0에서 -10px로 변경: 텍스트를 10px 더 아래로 */
-  width: 350px;
-  font-size: 14px;
-  line-height: 1.4;
-  margin-left: 440px;
-}
+
     .right-image {
       width: 600px;
       height: auto;
@@ -153,10 +159,10 @@
 
     #bottom-left-img {
       width: 250px;
-  height: auto;
-  position: relative;
-  top: 40px;  /* 원하는 만큼 값 조절 */
-}
+      height: auto;
+      position: relative;
+      top: 40px;
+    }
 
     .bottom-text {
       margin-left: 20px;
@@ -202,6 +208,10 @@
       <img id="left-img" src="https://i.imgur.com/h9Pbg7v.jpeg" alt="Woman in activewear" />
       <div class="cruise-container">
         <img id="cruise-img" src="https://i.imgur.com/dU4W2kC.jpeg" alt="Woman on cruise" />
+
+        <!-- 이미지 바로 위 바깥에 텍스트 -->
+        <div class="front-row-text">Front Row</div>
+
         <!-- 기존 텍스트 -->
         <div class="cruise-caption">
           I tall unfurled over the course of about a month. In August 2010, Lady Gaga became the most-followed person on the platform we then called Twitter. Not long after, she was beamed into the homes of 11.4 million MTV viewers during the VMAs, wearing 35 pounds of raw flank steak. Over the next couple of days, the app made a critical update: For the first time, photos and videos could be embedded in tweets, and new posts began to populate the feed via an addictive, slot machine-style feature, now known as the "infinite scroll." It buoyed conversation about the meat dress, already one
